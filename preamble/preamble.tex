@@ -1,0 +1,53 @@
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+\usepackage{lineno}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{environ}
+\usepackage{tabularx}
+\usepackage{siunitx}
+
+\title{A paradigm-shifting discovery}
+\author{A. Marignier et al.}
+
+\graphicspath{{figures/generated/}{figures/raw/}}
+
+% ensure line numbers continue for paragraphs that have equations 
+\let\oldequation\equation
+\let\oldendequation\endequation
+\renewenvironment{equation}
+{\linenomathNonumbers\oldequation}
+{\oldendequation\endlinenomath}
+\let\oldalign\align
+\let\oldendalign\endalign
+\renewenvironment{align}
+{\linenomathNonumbers\oldalign}
+{\oldendalign\endlinenomath}
+
+% scalable tikz pictrues
+\makeatletter
+\newcounter{tikz@scale@num}
+\newsavebox{\measure@tikzpicture}
+\NewEnviron{scaletikzpicturetowidth}[2][]{%
+    % optional argument #1 is passed to \tikzsetnextfilename if not empty
+    \stepcounter{tikz@scale@num}%
+    \def\tikz@width{#2}%
+    \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+        \ifcat$#1$\else\tikzsetnextfilename{#1}\fi
+        \BODY
+    \end{lrbox}%
+    \pgfmathparse{#2/\wd\measure@tikzpicture}%
+    \ifcsname tikzscale\number\value{tikz@scale@num}\endcsname\else
+        \expandafter\xdef\csname tikzscale\number\value{tikz@scale@num}\endcsname{\pgfmathresult}%
+    \fi
+    \tikzset{external/system call={pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\string\expandafter\string\edef\string\csname\space tikzscale\number\value{tikz@scale@num}\string\endcsname{\csname tikzscale\number\value{tikz@scale@num}\endcsname}\texsource"}}%
+    \edef\tikzscale{\csname tikzscale\number\value{tikz@scale@num}\endcsname}%
+    \ifcat$#1$\else\tikzsetnextfilename{#1}\fi
+    \BODY
+}
+\makeatother
