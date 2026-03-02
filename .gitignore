@@ -28,11 +28,6 @@
 *.xdv
 *.auxlock
 
-# Generated documents (uncomment if you want to track PDFs)
-*.pdf
-*.ps
-*.eps
-
 # Build directories
 build/
 output/

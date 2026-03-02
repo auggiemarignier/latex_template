@@ -1,0 +1,27 @@
+% Standalone TikZ dummy image for testing
+\documentclass[tikz,border=3mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+
+\begin{document}
+\begin{tikzpicture}[scale=1]
+  % light grid
+  \draw[step=0.5cm,gray!20] (-3,-2) grid (3,2);
+
+  % axes
+  \draw[->] (-3,0) -- (3,0) node[right] {x};
+  \draw[->] (0,-2) -- (0,2) node[above] {y};
+
+  % filled rectangle
+  \fill[blue!20] (-2,-1) rectangle (-0.5,1);
+  \draw[blue] (-2,-1) rectangle (-0.5,1);
+
+  % circle with label
+  \draw[red,thick] (1,0) circle[radius=0.9];
+  \node at (1,0) {A};
+
+  % curved arrow and label
+  \draw[->,very thick] (-0.5,0.8) to[out=30,in=150] (0.9,0.6);
+  \node[above] at (0.2,1) {example arrow};
+\end{tikzpicture}
+\end{document}
