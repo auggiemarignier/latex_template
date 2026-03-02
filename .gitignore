@@ -41,7 +41,6 @@ _minted*
 # Editor/OS files
 .DS_Store
 Thumbs.db
-.vscode/
 .idea/
 *.swp
 *~

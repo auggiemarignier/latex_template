@@ -1,0 +1,102 @@
+{
+  "files.associations": {
+    "*.bbl": "latex"
+  },
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.auxlock": true,
+    "**/*.bcf": true,
+    "**/*.blg": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.fls": true,
+    "**/*.lof": true,
+    "**/*.lot": true,
+    "**/*.synctex.gz": true,
+    "**/*.toc": true
+  },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.linting.chktex.enabled": true,
+  "latex-workshop.linting.chktex.exec.args": [
+    "-wall",
+    "-n3",
+    "-n21",
+    "-n22",
+    "-n24",
+    "-n30",
+    "-n44",
+    "-n45",
+    "-n46",
+    "-e16",
+    "-q",
+    "-v2"
+  ],
+  "latex-workshop.linting.run": "onType",
+  "latex-workshop.linting.delay": 500,
+  "[latex]": {
+    "editor.fontFamily": "'Monaspace Radon', monospace"
+  },
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "-shell-escape",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk 🔃",
+      "tools": [
+        "latexmk"
+      ]
+    },
+  ],
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.autoClean.run": "onSucceeded",
+  "latex-workshop.latex.clean.method": "glob",
+  "latex-workshop.latex.clean.fileTypes": [
+    "%DOCFILE%.bcf",
+    "%DOCFILE%.blg",
+    "%DOCFILE%.idx",
+    "%DOCFILE%.ind",
+    "%DOCFILE%.lof",
+    "%DOCFILE%.lot",
+    "%DOCFILE%.out",
+    "%DOCFILE%.toc",
+    "%DOCFILE%.acn",
+    "%DOCFILE%.acr",
+    "%DOCFILE%.alg",
+    "%DOCFILE%.glg",
+    "%DOCFILE%.glo",
+    "%DOCFILE%.gls",
+    "%DOCFILE%.fls",
+    "%DOCFILE%.log",
+    "%DOCFILE%.fdb_latexmk",
+    "%DOCFILE%.snm",
+    "%DOCFILE%.synctex(busy)",
+    "%DOCFILE%.synctex.gz(busy)",
+    "%DOCFILE%.nav",
+    "%DOCFILE%.vrb",
+    "%DOCFILE%.run.xml",
+    "%DOCFILE%.bak",
+    "*.bak"
+  ],
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.latex.clean.args": [
+    "-outdir=%OUTDIR%/build",
+    "-c",
+    "%TEX%"
+  ],
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.latex.build.rootfileInStatus": true,
+  "latex-workshop.latex.outDir": "%DIR%/build"
+}
