@@ -1,0 +1,68 @@
+# Generic .gitignore for LaTeX projects
+
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.toc
+*.lof
+*.lot
+*.out
+*.idx
+*.ilg
+*.ind
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+*.maf
+*.mtc*
+*.run.xml
+*.spl
+*.bcf
+*.xdv
+*.auxlock
+
+# Generated documents (uncomment if you want to track PDFs)
+*.pdf
+*.ps
+*.eps
+
+# Build directories
+build/
+output/
+out/
+latex-output/
+
+# Minted and pygments caches
+_minted*
+*.pyg
+
+# Editor/OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# Backup files
+*.bak
+*.backup
+
+# Misc
+__pycache__/
+*.pyc
+
+# If using latexmk/latexindent or other tools, ignore their caches
+.latexmkrc
+
+# Temporary files created by some editors
+*~
+
+# End of .gitignore
