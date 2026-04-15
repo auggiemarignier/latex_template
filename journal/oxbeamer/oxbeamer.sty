@@ -1,0 +1,80 @@
+\setbeamertemplate{navigation symbols}{}
+
+\usetheme{Madrid}
+\usefonttheme{serif}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title slide formatting %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{oxfordgreen}{RGB}{66,106,90}
+\definecolor{oxfordoceangrey}{RGB}{120,158,158}
+\definecolor{oxfordcoolgrey}{RGB}{228,240,239}
+\definecolor{oxfordblue}{RGB}{4,30,66}
+
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamercolor{itemize item}{fg=oxfordblue}
+\setbeamercolor{itemize subitem}{fg=oxfordblue}
+
+\pgfdeclareimage[width=1.45cm]{base}{journal/oxbeamer/ES_Square.jpg}
+\pgfdeclareimage[width=1.45cm]{oxfordlogo}{journal/oxbeamer/oxford-logo.png}
+\pgfdeclareimage[width=4cm]{schmidtlogo}{journal/oxbeamer/schmidt-logo.png}
+
+
+\setbeamertemplate{title page}{
+\begin{tikzpicture}[remember picture,overlay]
+\shade[top color=oxfordblue!95,bottom color=white!85,middle color=oxfordblue!15]
+  ([shift={(0cm,0cm)}]current page.north west)
+     rectangle
+  ([shift={(0cm,3cm)}]current page.south east);
+\end{tikzpicture}%  
+\begin{picture}(0,0)
+    \put(0, 20){%
+        \pgfuseimage{base}
+        \pgfuseimage{oxfordlogo}
+        \pgfuseimage{schmidtlogo}
+    }
+    \put(0,-150){%
+        \begin{minipage}[b][4.5cm][t]{0.7\textwidth}
+            \color{oxfordblue}
+            \usebeamerfont{title}
+                {\inserttitle \\[0.9cm]}
+            \usebeamerfont{subtitle}
+                {\insertauthor \\}
+                {\insertinstitute \\[0.3cm]}
+                    
+        \end{minipage}
+    }
+\end{picture}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% General slide formatting %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{headline}
+{%
+    \begin{picture}(0,0)
+        \put(314,-50){%
+            \pgfuseimage{oxfordlogo}
+        }
+        \put(20,-55){%
+            {\color{oxfordblue} \rule{320pt}{0.4pt}}
+        }
+    \end{picture}
+}
+
+\setbeamertemplate{frametitle}{\vspace{12pt}\color{oxfordblue}\bfseries\insertframetitle%
+  \par
+    \begin{picture}(0,0)
+        \put(-8,-10){%
+            \normalsize\color{oxfordblue}
+        }
+        \put(-7,-20){%
+            \tiny\color{oxfordblue}\insertframesubtitle
+        }
+    \end{picture}
+}
+
+
+\setbeamertemplate{footline}[frame number]{}
