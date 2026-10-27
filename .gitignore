@@ -33,7 +33,12 @@ build/
 output/
 out/
 latex-output/
+figures/generated/
 
+# Raw data
+figures/data/
+!figures/data/readme.md
+!figures/data/fetch_data.sh
 # Minted and pygments caches
 _minted*
 *.pyg
